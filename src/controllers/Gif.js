@@ -1,5 +1,4 @@
 const GifModel = require('../models/Gif');
-const cloud = require('../config/cloudinaryConfig')
 
 const Gif = {
 
@@ -10,7 +9,6 @@ const Gif = {
         }
 
         const gif = GifModel.create(req.body, req.file);
-        cloud.uploads(gif);
         
         res.status(201).send({
             'status': 'success',
